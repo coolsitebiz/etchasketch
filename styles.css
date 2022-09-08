@@ -18,18 +18,19 @@ body {
 }
 
 .grid {
-    background-color: white;
+    background-color: darkblue;
     width: 640px;
     height: 640px;
     display: grid;
 }
 
 .cell {
-    /* border: 1px solid lightgrey; */
+    border: 1px solid white;
 }
 
 .highlighted {
     background-color: aqua;
+    opacity: .5;
 }
 
 @media only screen and (max-width: 645px) {

@@ -24,18 +24,20 @@ function makeGrid(dimension) {
             changeColor(e)
         })
         cell.addEventListener('mouseover', (e) => {
-            e.target.classList.toggle("highlighted");
+            e.target.classList.add("highlighted");
         })
-        // cell.addEventListener('mouseout', (e) => {
-        //     e.target.classList.toggle("highlighted");
-        // })
+
         grid.appendChild(cell);
     }
 
 
 }
 
-function newGrid(dimension) {
+function newGrid() {
+    let dimension = prompt("Enter a number between 2 and 100:"); 
+    if (isNaN(dimension)) {
+        dimension = 16;
+    }
     destroyGrid();
     makeGrid(dimension);
 }
