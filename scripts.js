@@ -1,13 +1,18 @@
-console.log("JS is working");
-
 let colors = {
     red: "red",
     blue: "blue",
     green: "green",
     yellow: "yellow",
     orange: "orange",
+    magenta: "magenta",
     black: "black",
     white: "white"
+}
+
+let color = colors.black;
+
+function setColor(newColor) {
+    color = newColor;
 }
 
 function makeGrid(dimension) {
@@ -32,7 +37,7 @@ function makeGrid(dimension) {
         cell.style.backgroundColor = "white";
         cell.style.border = "1px solid gray";
         cell.addEventListener('mousedown', (e) => {
-            changeColor(e, colors.green);
+            changeColor(e, color);
         })
         // cell.addEventListener('mouseover', (e) => {
         //     e.target.classList.toggle("highlighted");
