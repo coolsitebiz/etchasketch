@@ -1,5 +1,15 @@
 console.log("JS is working");
 
+let colors = {
+    red: "red",
+    blue: "blue",
+    green: "green",
+    yellow: "yellow",
+    orange: "orange",
+    black: "black",
+    white: "white"
+}
+
 function makeGrid(dimension) {
 
     if (dimension < 2) {
@@ -19,13 +29,17 @@ function makeGrid(dimension) {
 
     for (let i = 0; i < dimension * dimension; i++) {
         let cell = document.createElement('div');
-        cell.className = 'cell';
+        cell.style.backgroundColor = "white";
+        cell.style.border = "1px solid gray";
         cell.addEventListener('mousedown', (e) => {
-            changeColor(e)
+            changeColor(e, colors.green);
         })
-        cell.addEventListener('mouseover', (e) => {
-            e.target.classList.add("highlighted");
-        })
+        // cell.addEventListener('mouseover', (e) => {
+        //     e.target.classList.toggle("highlighted");
+        // })
+        // cell.addEventListener('mouseout', (e) => {
+        //     e.target.classList.toggle("highlighted");
+        // })
 
         grid.appendChild(cell);
     }
@@ -47,6 +61,13 @@ function destroyGrid() {
     grid.parentNode.removeChild(grid);
 }
 
-function changeColor(obj) {
-    obj.target.style.backgroundColor = "black";
+function changeColor(obj, color) {
+    if (obj.target.style.backgroundColor !== "white") {
+        obj.target.style.backgroundColor = "white";
+    } else {
+        obj.target.style.backgroundColor = color;
+    }
+    
+    
+    
 }
