@@ -1,14 +1,3 @@
-let colors = {
-    red: "red",
-    blue: "blue",
-    green: "green",
-    yellow: "yellow",
-    orange: "orange",
-    magenta: "magenta",
-    black: "black",
-    white: "white"
-}
-
 let color = colors.black;
 
 function setColor(newColor) {
@@ -39,12 +28,6 @@ function makeGrid(dimension) {
         cell.addEventListener('mousedown', (e) => {
             changeColor(e, color);
         })
-        // cell.addEventListener('mouseover', (e) => {
-        //     e.target.classList.toggle("highlighted");
-        // })
-        // cell.addEventListener('mouseout', (e) => {
-        //     e.target.classList.toggle("highlighted");
-        // })
 
         grid.appendChild(cell);
     }
