@@ -1,59 +1,84 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: gray;
+  background-color: gray;
 }
 
 #main {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }
 
 .grid {
-    background-color: white;
-    width: 640px;
-    height: 640px;
-    display: grid;
+  background-color: white;
+  width: 640px;
+  height: 640px;
+  display: grid;
+  box-shadow: 5px 5px 5px #333;
 }
 
 #colors {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
 }
 
 .color {
-    border: 1px solid lightgray;
-    width: 40px;
-    height: 40px;
+  border: none;
+}
+
+#colorPicker {
+  border: none;
+  outline: none;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  -webkit-appearance: none;
+}
+
+#colorPicker::-webkit-color-swatch-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+#colorPicker::-webkit-color-swatch {
+  border: 3px solid black;
+  border-radius: 50%;
 }
 
 #newGridButton {
-    margin: 10px;
-    align-self: center;
-    justify-self: center;
-    padding: 10px;
-    border-radius: 10px;
+  margin: 10px;
+  align-self: center;
+  justify-self: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #333;
+  background-color: dimgray;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .highlighted {
-    background-color: aqua;
+  background-color: aqua;
 }
 
 @media only screen and (max-width: 645px) {
-    #grid {
-        width: 320px;
-        height: 320px;
-        grid-template-columns: repeat(16, 20px);
-    }
-
+  #grid {
+    width: 320px;
+    height: 320px;
+    grid-template-columns: repeat(16, 20px);
+  }
 }

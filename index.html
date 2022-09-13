@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./scripts.js" lang="javascript"></script>
     <title>Draw Draw Draw</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="main">
-        <div id="colors">
-            <div class="color" style="background-color: red" onclick="setColor('red')"></div>
-            <div class="color" style="background-color: green" onclick="setColor('green')"></div>
-            <div class="color" style="background-color: blue" onclick="setColor('blue')"></div>
-            <div class="color" style="background-color: #52afcf" onclick="setColor('#52afcf')"></div>
-            <div class="color" style="background-color: yellow" onclick="setColor('yellow')"></div>
-            <div class="color" style="background-color: orange" onclick="setColor('orange')"></div>
-            <div class="color" style="background-color: magenta" onclick="setColor('magenta')"></div>
-            <div class="color" style="background-color: purple" onclick="setColor('purple')"></div>
-            <div class="color" style="background-color: rgb(223, 152, 223)" onclick="setColor('rgb(223, 152, 223)')"></div>
-            <div class="color" style="background-color: teal" onclick="setColor('teal')"></div>
-            <div class="color" style="background-color: gray" onclick="setColor('gray')"></div>
-            <div class="color" style="background-color: rgb(56, 56, 56)" onclick="setColor('rgb(56, 56, 56)')"></div>
-            <div class="color" style="background-color: brown" onclick="setColor('brown')"></div>
-            <div class="color" style="background-color: #604c3b" onclick="setColor('#604c3b')"></div>
-            <div class="color" style="background-color: white" onclick="setColor('white')"></div>
-            <div class="color" style="background-color: black" onclick="setColor('black')"></div>
-            <button id="newGridButton" onclick="newGrid()">Start Over</button>
+      <div id="colors">
+        <div class="color">
+          <input
+            id="colorPicker"
+            type="color"
+            value="#000000"
+            oninput="setColor(this.value, this)"
+          />
         </div>
-        
+        <button id="newGridButton" onclick="newGrid()">Start Over</button>
+      </div>
     </div>
-    <script>makeGrid(16);</script>
-</body>
+    <script>
+      makeGrid(16);
+    </script>
+  </body>
 </html>
