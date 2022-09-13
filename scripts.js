@@ -1,4 +1,15 @@
 let color = "black";
+let mouseDown = false;
+
+window.addEventListener("mousedown", (e) => {
+  mouseDown = true;
+  console.log("mousedown");
+});
+
+window.addEventListener("mouseup", (e) => {
+  mouseDown = false;
+  console.log("mouseup");
+});
 
 function setColor(newColor, e) {
   color = newColor;
@@ -23,10 +34,15 @@ function makeGrid(dimension) {
   for (let i = 0; i < dimension * dimension; i++) {
     let cell = document.createElement("div");
     cell.style.backgroundColor = "white";
-    cell.style.border = "1px dotted gray";
     cell.style.cursor = "";
     cell.addEventListener("mousedown", (e) => {
       changeColor(e, color);
+    });
+    cell.addEventListener("mouseover", (e) => {
+      draw(mouseDown, e);
+    });
+    cell.addEventListener("dragstart", () => {
+      mouseDown = true;
     });
 
     grid.appendChild(cell);
@@ -35,11 +51,17 @@ function makeGrid(dimension) {
 
 function newGrid() {
   let dimension = prompt("Enter a number between 2 and 100:");
-  if (isNaN(dimension)) {
+  if (isNaN(dimension) || !dimesion) {
     dimension = 16;
   }
   destroyGrid();
   makeGrid(dimension);
+}
+
+function draw(mouseDown, e) {
+  if (mouseDown) {
+    changeColor(e, color);
+  }
 }
 
 function destroyGrid() {
@@ -48,9 +70,5 @@ function destroyGrid() {
 }
 
 function changeColor(obj, color) {
-  if (obj.target.style.backgroundColor !== "white") {
-    obj.target.style.backgroundColor = "white";
-  } else {
-    obj.target.style.backgroundColor = color;
-  }
+  obj.target.style.backgroundColor = color;
 }
