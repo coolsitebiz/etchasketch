@@ -3,12 +3,10 @@ let mouseDown = false;
 
 window.addEventListener("mousedown", (e) => {
   mouseDown = true;
-  console.log("mousedown");
 });
 
 window.addEventListener("mouseup", (e) => {
   mouseDown = false;
-  console.log("mouseup");
 });
 
 function setColor(newColor, e) {
@@ -28,18 +26,21 @@ function makeGrid(dimension) {
   let main = document.querySelector("#main");
   let grid = document.createElement("div");
   grid.className = "grid";
-  grid.style.gridTemplateColumns = `repeat(${dimension}, ${640 / dimension}px)`;
+  grid.style.gridTemplateColumns = `repeat(${dimension}, 1fr)`;
   main.appendChild(grid);
 
   for (let i = 0; i < dimension * dimension; i++) {
     let cell = document.createElement("div");
     cell.style.backgroundColor = "white";
-    cell.style.cursor = "";
+    cell.style.userSelect = "none";
     cell.addEventListener("mousedown", (e) => {
       changeColor(e, color);
     });
     cell.addEventListener("mouseover", (e) => {
-      draw(mouseDown, e);
+        if(mouseDown) {
+            draw(mouseDown, e);
+        }
+      
     });
     cell.addEventListener("dragstart", () => {
       mouseDown = true;
@@ -51,7 +52,7 @@ function makeGrid(dimension) {
 
 function newGrid() {
   let dimension = prompt("Enter a number between 2 and 100:");
-  if (isNaN(dimension) || !dimesion) {
+  if (isNaN(dimension) || !dimension) {
     dimension = 16;
   }
   destroyGrid();
@@ -59,14 +60,12 @@ function newGrid() {
 }
 
 function draw(mouseDown, e) {
-  if (mouseDown) {
     changeColor(e, color);
-  }
 }
 
 function destroyGrid() {
-  let grid = document.querySelector(".grid");
-  grid.parentNode.removeChild(grid);
+  let gridframe = document.querySelector(".grid");
+  gridframe.parentNode.removeChild(gridframe);
 }
 
 function changeColor(obj, color) {
