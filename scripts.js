@@ -1,5 +1,6 @@
 let color = "black";
 let mouseDown = false;
+let gridLines = false;
 
 window.addEventListener("mousedown", (e) => {
   mouseDown = true;
@@ -31,14 +32,20 @@ function makeGrid(dimension) {
 
   for (let i = 0; i < dimension * dimension; i++) {
     let cell = document.createElement("div");
+    cell.className = "cell";
     cell.style.backgroundColor = "white";
     cell.style.userSelect = "none";
+
+    if (gridLines) {
+      cell.classList.add("gridLines");
+    }
+
     cell.addEventListener("mousedown", (e) => {
       changeColor(e, color);
     });
     cell.addEventListener("mouseover", (e) => {
         if(mouseDown) {
-            draw(mouseDown, e);
+            draw(e);
         }
       
     });
@@ -59,7 +66,7 @@ function newGrid() {
   makeGrid(dimension);
 }
 
-function draw(mouseDown, e) {
+function draw(e) {
     changeColor(e, color);
 }
 
@@ -70,4 +77,12 @@ function destroyGrid() {
 
 function changeColor(obj, color) {
   obj.target.style.backgroundColor = color;
+}
+
+function showGridLines() {
+  let cells = document.querySelectorAll(".cell");
+  cells.forEach((cell) => {
+    cell.classList.toggle("gridLines");
+  })
+  gridLines = !gridLines;
 }
