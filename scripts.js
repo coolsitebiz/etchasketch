@@ -1,6 +1,7 @@
 let color = "black";
 let mouseDown = false;
 let gridLines = false;
+let colorPicker = document.querySelector("#colorPicker");
 
 window.addEventListener("mousedown", (e) => {
   mouseDown = true;
@@ -10,9 +11,10 @@ window.addEventListener("mouseup", (e) => {
   mouseDown = false;
 });
 
-function setColor(newColor, e) {
+
+
+function setColor(newColor) {
   color = newColor;
-  e.blur();
 }
 
 function makeGrid(dimension) {
@@ -53,8 +55,11 @@ function makeGrid(dimension) {
       mouseDown = true;
     });
 
+    
+
     grid.appendChild(cell);
   }
+  resetCustomColors();
 }
 
 function newGrid() {
@@ -85,4 +90,30 @@ function showGridLines() {
     cell.classList.toggle("gridLines");
   })
   gridLines = !gridLines;
+}
+
+function setCustomColor(e) {
+  if (e.textContent === "SET") {
+    e.textContent = "";
+    e.style.backgroundColor = color;
+  } else {
+    setColor(e.style.backgroundColor);
+  }
+}
+
+function resetCustomColor(e) {
+  e.style.backgroundColor = "white";
+  e.style.userSelect = "none"; 
+  e.style.display = "flex";
+  e.style.justifyContent = "center";
+  e.style.alignItems = "center";
+  e.style.fontSize = ".5em";
+  e.textContent = "SET";
+}
+
+function resetCustomColors() {
+  let customColors = document.querySelectorAll(".customColor");
+  customColors.forEach((e) => {
+    resetCustomColor(e);
+  });
 }

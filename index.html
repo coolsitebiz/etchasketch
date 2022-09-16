@@ -11,17 +11,29 @@
   <body>
     <div id="main">
       <div id="colors">
+        <h1>Draw.</h1>
         <div class="color">
           <input
             id="colorPicker"
             type="color"
             value="#000000"
-            oninput="setColor(this.value, this)"
+            oninput="setColor(this.value)"
           />
+        </div>
+        <div id="customColorContainer">
+        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
+        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
+        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
+        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
+        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
+        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
+        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
+        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
         </div>
         <button id="eraserButton" onclick="setColor('white', this)">Eraser</button>
         <button id="newGridButton" onclick="newGrid()">Start Over</button>
-        <button onclick="showGridLines()">Show Grid</button>
+        <button id="gridLineButton" onclick="showGridLines()">Show Grid</button>
+        <p><em>Double-click to reset custom colors</em></p>
       </div>
     </div>
     <script>
