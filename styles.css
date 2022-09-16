@@ -149,11 +149,11 @@ button:active {
   }
 
   #currentColor {
-    width: 20px;
-    height: 40px;
+    display: none;
   }
 
   #colors {
+    margin-top: 45px;
     width: 250px;
     flex-wrap: nowrap;
     align-items: center;
