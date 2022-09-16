@@ -27,7 +27,7 @@ function makeGrid(dimension) {
   }
 
   let main = document.querySelector("#main");
-  let grid = document.querySelector("#grid");
+  let grid = document.createElement("div");
   grid.className = "grid";
   grid.style.gridTemplateColumns = `repeat(${dimension}, 1fr)`;
   main.appendChild(grid);
