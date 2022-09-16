@@ -3,7 +3,6 @@ let mouseDown = false;
 let gridLines = false;
 let colorPicker = document.querySelector("#colorPicker");
 
-
 window.addEventListener("mousedown", (e) => {
   mouseDown = true;
 });
@@ -11,8 +10,6 @@ window.addEventListener("mousedown", (e) => {
 window.addEventListener("mouseup", (e) => {
   mouseDown = false;
 });
-
-
 
 function setColor(newColor) {
   let currentColorDiv = document.querySelector("#currentColor");
@@ -30,7 +27,7 @@ function makeGrid(dimension) {
   }
 
   let main = document.querySelector("#main");
-  let grid = document.createElement("div");
+  let grid = document.querySelector("#grid");
   grid.className = "grid";
   grid.style.gridTemplateColumns = `repeat(${dimension}, 1fr)`;
   main.appendChild(grid);
@@ -49,16 +46,13 @@ function makeGrid(dimension) {
       changeColor(e, color);
     });
     cell.addEventListener("mouseover", (e) => {
-        if(mouseDown) {
-            draw(e);
-        }
-      
+      if (mouseDown) {
+        draw(e);
+      }
     });
     cell.addEventListener("dragstart", () => {
       mouseDown = true;
     });
-
-    
 
     grid.appendChild(cell);
   }
@@ -76,7 +70,7 @@ function newGrid() {
 }
 
 function draw(e) {
-    changeColor(e, color);
+  changeColor(e, color);
 }
 
 function destroyGrid() {
@@ -92,7 +86,7 @@ function showGridLines() {
   let cells = document.querySelectorAll(".cell");
   cells.forEach((cell) => {
     cell.classList.toggle("gridLines");
-  })
+  });
   gridLines = !gridLines;
 }
 
@@ -107,7 +101,7 @@ function setCustomColor(e) {
 
 function resetCustomColor(e) {
   e.style.backgroundColor = "white";
-  e.style.userSelect = "none"; 
+  e.style.userSelect = "none";
   e.style.display = "flex";
   e.style.justifyContent = "center";
   e.style.alignItems = "center";

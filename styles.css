@@ -75,7 +75,6 @@ p {
   gap: 5px;
   justify-content: center;
   align-items: center;
-
 }
 
 .customColor {
@@ -114,7 +113,7 @@ button {
 
 button:active {
   background-color: lightgrey;
-  transition: .01s ease-in;
+  transition: 0.01s ease-in;
 }
 
 .highlighted {
@@ -123,7 +122,55 @@ button:active {
 
 @media only screen and (max-width: 645px) {
   #grid {
+    width: 300px;
+    height: 300px;
+  }
+
+  #customColorContainer {
+    display: none;
+  }
+
+  p {
+    display: none;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  #eraserButton {
+    display: none;
+  }
+
+  #main {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  #currentColor {
+    width: 20px;
+    height: 40px;
+    margin-left: 10px;
+  }
+
+  #colors {
     width: 250px;
-    height: 250px;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3em;
+  }
+
+  #colorPicker {
+    width: 55px;
+    height: 55px;
+  }
+
+  button {
+    align-self: center;
+    justify-self: center;
+    padding: 5px;
+    margin-bottom: 25px;
   }
 }

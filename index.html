@@ -22,20 +22,55 @@
         </div>
         <div id="currentColor"></div>
         <div id="customColorContainer">
-        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
-        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
-        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
-        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
-        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
-        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
-        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
-        <div class="customColor" onclick="setCustomColor(this)" ondblclick = "resetCustomColor(this)"></div>
+          <div
+            class="customColor"
+            onclick="setCustomColor(this)"
+            ondblclick="resetCustomColor(this)"
+          ></div>
+          <div
+            class="customColor"
+            onclick="setCustomColor(this)"
+            ondblclick="resetCustomColor(this)"
+          ></div>
+          <div
+            class="customColor"
+            onclick="setCustomColor(this)"
+            ondblclick="resetCustomColor(this)"
+          ></div>
+          <div
+            class="customColor"
+            onclick="setCustomColor(this)"
+            ondblclick="resetCustomColor(this)"
+          ></div>
+          <div
+            class="customColor"
+            onclick="setCustomColor(this)"
+            ondblclick="resetCustomColor(this)"
+          ></div>
+          <div
+            class="customColor"
+            onclick="setCustomColor(this)"
+            ondblclick="resetCustomColor(this)"
+          ></div>
+          <div
+            class="customColor"
+            onclick="setCustomColor(this)"
+            ondblclick="resetCustomColor(this)"
+          ></div>
+          <div
+            class="customColor"
+            onclick="setCustomColor(this)"
+            ondblclick="resetCustomColor(this)"
+          ></div>
         </div>
-        <button id="eraserButton" onclick="setColor('white', this)">Eraser</button>
+        <button id="eraserButton" onclick="setColor('white', this)">
+          Eraser
+        </button>
         <button id="newGridButton" onclick="newGrid()">Start Over</button>
         <button id="gridLineButton" onclick="showGridLines()">Show Grid</button>
         <p><em>Double-click to reset custom colors</em></p>
       </div>
+      <div id="grid"></div>
     </div>
     <script>
       makeGrid(16);
