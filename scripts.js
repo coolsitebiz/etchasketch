@@ -3,6 +3,7 @@ let mouseDown = false;
 let gridLines = false;
 let colorPicker = document.querySelector("#colorPicker");
 
+
 window.addEventListener("mousedown", (e) => {
   mouseDown = true;
 });
@@ -14,6 +15,8 @@ window.addEventListener("mouseup", (e) => {
 
 
 function setColor(newColor) {
+  let currentColorDiv = document.querySelector("#currentColor");
+  currentColorDiv.style.backgroundColor = newColor;
   color = newColor;
 }
 
@@ -59,6 +62,7 @@ function makeGrid(dimension) {
 
     grid.appendChild(cell);
   }
+  setColor("black");
   resetCustomColors();
 }
 
