@@ -120,7 +120,7 @@ button:active {
   background-color: aqua;
 }
 
-@media only screen and (max-width: 645px) {
+@media only screen and (max-width: 1000px) {
   #grid {
     width: 300px;
     height: 300px;
@@ -151,7 +151,6 @@ button:active {
   #currentColor {
     width: 20px;
     height: 40px;
-    margin-left: 10px;
   }
 
   #colors {
@@ -159,7 +158,6 @@ button:active {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    margin-top: 3em;
   }
 
   #colorPicker {
